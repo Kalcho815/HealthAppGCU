@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "type": "mssql.local",
+      "connectionId": "HealthAppGCUContextConnection"
+    },
+    "mssql2": {
+      "type": "mssql.local",
+      "connectionId": "HealthAppContextConnection"
+    }
+  }
+}

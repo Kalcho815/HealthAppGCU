@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30709.132
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthAppGCU", "HealthAppGCU\HealthAppGCU.csproj", "{2C81EE80-E410-4680-8EB8-537CE09EC045}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthAppGCUData", "HealthAppGCUData\HealthAppGCUData.csproj", "{4EE34E11-1951-401C-B7CF-31D9871F70B5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2C81EE80-E410-4680-8EB8-537CE09EC045}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C81EE80-E410-4680-8EB8-537CE09EC045}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C81EE80-E410-4680-8EB8-537CE09EC045}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C81EE80-E410-4680-8EB8-537CE09EC045}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EE34E11-1951-401C-B7CF-31D9871F70B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EE34E11-1951-401C-B7CF-31D9871F70B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EE34E11-1951-401C-B7CF-31D9871F70B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EE34E11-1951-401C-B7CF-31D9871F70B5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {95F1F5B4-FDF5-445D-9345-9AFC2373F246}
+	EndGlobalSection
+EndGlobal
