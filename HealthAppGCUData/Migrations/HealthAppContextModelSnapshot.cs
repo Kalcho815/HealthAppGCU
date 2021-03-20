@@ -17,7 +17,7 @@ namespace HealthAppGCUData.Migrations
                 .HasAnnotation("ProductVersion", "3.1.12")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("HealthAppGCU.Models.DailyReport", b =>
+            modelBuilder.Entity("HealthAppGCU.Models.HealthcareActivity", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnName("ID")
@@ -35,8 +35,12 @@ namespace HealthAppGCUData.Migrations
                         .HasColumnName("DATE")
                         .HasColumnType("datetime");
 
-                    b.Property<string>("HealthcareActivityId")
+                    b.Property<string>("HealthcareActivityCategoryId")
                         .HasColumnType("varchar(767)");
+
+                    b.Property<int>("Name")
+                        .HasColumnName("NAME")
+                        .HasColumnType("int");
 
                     b.Property<string>("UserId")
                         .HasColumnName("USER_ID")
@@ -52,107 +56,14 @@ namespace HealthAppGCUData.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("HealthcareActivityId");
+                    b.HasIndex("HealthcareActivityCategoryId");
 
                     b.HasIndex("UserId");
-
-                    b.ToTable("DAILY_REPORTS");
-                });
-
-            modelBuilder.Entity("HealthAppGCUData.Models.HealthcareActivity", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnName("ID")
-                        .HasColumnType("varchar(767)");
-
-                    b.Property<int>("Calories")
-                        .HasColumnType("int");
-
-                    b.Property<string>("HealthcareActivityCategoryId")
-                        .HasColumnName("HEALTHCARE_CATEGORY_ID")
-                        .HasColumnType("varchar(767)");
-
-                    b.Property<string>("Name")
-                        .HasColumnName("NAME")
-                        .HasColumnType("varchar(50)")
-                        .HasMaxLength(50);
-
-                    b.Property<double>("WaterIntake")
-                        .HasColumnType("double");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("HealthcareActivityCategoryId");
 
                     b.ToTable("HEALTHCARE_ACTIVITIES");
                 });
 
-            modelBuilder.Entity("HealthAppGCUData.Models.HealthcareActivityCategory", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnName("ID")
-                        .HasColumnType("varchar(767)");
-
-                    b.Property<string>("Name")
-                        .HasColumnName("NAME")
-                        .HasColumnType("varchar(50)")
-                        .HasMaxLength(50);
-
-                    b.HasKey("Id");
-
-                    b.ToTable("HEALTHCARE_ACTIVITIES_CATEGORIES");
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("varchar(767)");
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("varchar(256)")
-                        .HasMaxLength(256);
-
-                    b.Property<string>("NormalizedName")
-                        .HasColumnType("varchar(256)")
-                        .HasMaxLength(256);
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("NormalizedName")
-                        .IsUnique()
-                        .HasName("RoleNameIndex");
-
-                    b.ToTable("AspNetRoles");
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<string>("ClaimType")
-                        .HasColumnType("text");
-
-                    b.Property<string>("ClaimValue")
-                        .HasColumnType("text");
-
-                    b.Property<string>("RoleId")
-                        .IsRequired()
-                        .HasColumnType("varchar(767)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("RoleId");
-
-                    b.ToTable("AspNetRoleClaims");
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUser", b =>
+            modelBuilder.Entity("HealthAppGCU.Models.User", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("varchar(767)");
@@ -160,12 +71,12 @@ namespace HealthAppGCUData.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
+                    b.Property<int>("Age")
+                        .HasColumnName("AGE")
+                        .HasColumnType("int");
+
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Discriminator")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("Email")
@@ -174,6 +85,14 @@ namespace HealthAppGCUData.Migrations
 
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("FirstName")
+                        .HasColumnName("FIRST_NAME")
+                        .HasColumnType("text");
+
+                    b.Property<string>("LastName")
+                        .HasColumnName("LAST_NAME")
+                        .HasColumnType("text");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("tinyint(1)");
@@ -208,6 +127,10 @@ namespace HealthAppGCUData.Migrations
                         .HasColumnType("varchar(256)")
                         .HasMaxLength(256);
 
+                    b.Property<int>("Weight")
+                        .HasColumnName("WEIGHT")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("NormalizedEmail")
@@ -218,8 +141,71 @@ namespace HealthAppGCUData.Migrations
                         .HasName("UserNameIndex");
 
                     b.ToTable("AspNetUsers");
+                });
 
-                    b.HasDiscriminator<string>("Discriminator").HasValue("IdentityUser");
+            modelBuilder.Entity("HealthAppGCUData.Models.HealthUserRole", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("varchar(767)");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("varchar(256)")
+                        .HasMaxLength(256);
+
+                    b.Property<string>("NormalizedName")
+                        .HasColumnType("varchar(256)")
+                        .HasMaxLength(256);
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedName")
+                        .IsUnique()
+                        .HasName("RoleNameIndex");
+
+                    b.ToTable("AspNetRoles");
+                });
+
+            modelBuilder.Entity("HealthAppGCUData.Models.HealthcareActivityCategory", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnName("ID")
+                        .HasColumnType("varchar(767)");
+
+                    b.Property<string>("Name")
+                        .HasColumnName("NAME")
+                        .HasColumnType("varchar(50)")
+                        .HasMaxLength(50);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("HEALTHCARE_ACTIVITIES_CATEGORIES");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("text");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("text");
+
+                    b.Property<string>("RoleId")
+                        .IsRequired()
+                        .HasColumnType("varchar(767)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetRoleClaims");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -248,12 +234,10 @@ namespace HealthAppGCUData.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("varchar(128)")
-                        .HasMaxLength(128);
+                        .HasColumnType("varchar(767)");
 
                     b.Property<string>("ProviderKey")
-                        .HasColumnType("varchar(128)")
-                        .HasMaxLength(128);
+                        .HasColumnType("varchar(767)");
 
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("text");
@@ -290,12 +274,10 @@ namespace HealthAppGCUData.Migrations
                         .HasColumnType("varchar(767)");
 
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("varchar(128)")
-                        .HasMaxLength(128);
+                        .HasColumnType("varchar(767)");
 
                     b.Property<string>("Name")
-                        .HasColumnType("varchar(128)")
-                        .HasMaxLength(128);
+                        .HasColumnType("varchar(767)");
 
                     b.Property<string>("Value")
                         .HasColumnType("text");
@@ -305,49 +287,20 @@ namespace HealthAppGCUData.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("HealthAppGCU.Models.User", b =>
+            modelBuilder.Entity("HealthAppGCU.Models.HealthcareActivity", b =>
                 {
-                    b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
-
-                    b.Property<int>("Age")
-                        .HasColumnName("AGE")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Password")
-                        .HasColumnName("PASSWORD")
-                        .HasColumnType("varchar(30)")
-                        .HasMaxLength(30);
-
-                    b.Property<int>("Weight")
-                        .HasColumnName("WEIGHT")
-                        .HasColumnType("int");
-
-                    b.ToTable("USERS");
-
-                    b.HasDiscriminator().HasValue("User");
-                });
-
-            modelBuilder.Entity("HealthAppGCU.Models.DailyReport", b =>
-                {
-                    b.HasOne("HealthAppGCUData.Models.HealthcareActivity", "HealthcareActivity")
-                        .WithMany("DailyReports")
-                        .HasForeignKey("HealthcareActivityId");
-
-                    b.HasOne("HealthAppGCU.Models.User", "User")
-                        .WithMany("DailyReports")
-                        .HasForeignKey("UserId");
-                });
-
-            modelBuilder.Entity("HealthAppGCUData.Models.HealthcareActivity", b =>
-                {
-                    b.HasOne("HealthAppGCUData.Models.HealthcareActivityCategory", "HealthcareActivityCategory")
+                    b.HasOne("HealthAppGCUData.Models.HealthcareActivityCategory", null)
                         .WithMany("HealthcareActivities")
                         .HasForeignKey("HealthcareActivityCategoryId");
+
+                    b.HasOne("HealthAppGCU.Models.User", "User")
+                        .WithMany("HealthcareActivities")
+                        .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
+                    b.HasOne("HealthAppGCUData.Models.HealthUserRole", null)
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -356,7 +309,7 @@ namespace HealthAppGCUData.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("HealthAppGCU.Models.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -365,7 +318,7 @@ namespace HealthAppGCUData.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("HealthAppGCU.Models.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -374,13 +327,13 @@ namespace HealthAppGCUData.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
+                    b.HasOne("HealthAppGCUData.Models.HealthUserRole", null)
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("HealthAppGCU.Models.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -389,7 +342,7 @@ namespace HealthAppGCUData.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("HealthAppGCU.Models.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)

@@ -17,12 +17,11 @@ namespace HealthAppGCUData
         {
         }
 
-        public DbSet<DailyReport> DailyReports { get; set; }
+        public DbSet<HealthcareActivity> DailyReports { get; set; }
 
         public DbSet<HealthcareActivity> HealthcareActivities { get; set; }
 
         public DbSet<HealthcareActivityCategory> HealthcareActivityCategories { get; set; }
-
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -33,7 +32,7 @@ namespace HealthAppGCUData
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<User>().HasMany(p => p.DailyReports).WithOne(p => p.User);
+            modelBuilder.Entity<User>().HasMany(p => p.HealthcareActivities).WithOne(p => p.User);
 
           
 

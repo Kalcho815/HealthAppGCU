@@ -13,19 +13,22 @@ namespace HealthAppGCU.Models
     {
         public User()
         {
-            this.DailyReports = new List<DailyReport>();
+            this.HealthcareActivities = new List<HealthcareActivity>();
         }
 
-        public List<DailyReport> DailyReports { get; set; }
+        public List<HealthcareActivity> HealthcareActivities { get; set; }
 
-        [MaxLength(30)]
-        [Column("PASSWORD")]
-        public string Password { get; set; }
+        [Column("FIRST_NAME")]
+        public string FirstName { get; set; }
+
+        [Column("LAST_NAME")]
+        public string LastName { get; set; }
 
         [Column("AGE")]
         public int Age { get; set; }
 
         [Column("WEIGHT")]
         public int Weight { get; set; }
+
     }
 }

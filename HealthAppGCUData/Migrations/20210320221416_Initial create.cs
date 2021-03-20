@@ -4,7 +4,7 @@ using MySql.Data.EntityFrameworkCore.Metadata;
 
 namespace HealthAppGCUData.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class Initialcreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -41,10 +41,10 @@ namespace HealthAppGCUData.Migrations
                     LockoutEnd = table.Column<DateTimeOffset>(nullable: true),
                     LockoutEnabled = table.Column<bool>(nullable: false),
                     AccessFailedCount = table.Column<int>(nullable: false),
-                    Discriminator = table.Column<string>(nullable: false),
-                    PASSWORD = table.Column<string>(maxLength: 30, nullable: true),
-                    AGE = table.Column<int>(nullable: true),
-                    WEIGHT = table.Column<int>(nullable: true)
+                    FIRST_NAME = table.Column<string>(nullable: true),
+                    LAST_NAME = table.Column<string>(nullable: true),
+                    AGE = table.Column<int>(nullable: false),
+                    WEIGHT = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -109,8 +109,8 @@ namespace HealthAppGCUData.Migrations
                 name: "AspNetUserLogins",
                 columns: table => new
                 {
-                    LoginProvider = table.Column<string>(maxLength: 128, nullable: false),
-                    ProviderKey = table.Column<string>(maxLength: 128, nullable: false),
+                    LoginProvider = table.Column<string>(nullable: false),
+                    ProviderKey = table.Column<string>(nullable: false),
                     ProviderDisplayName = table.Column<string>(nullable: true),
                     UserId = table.Column<string>(nullable: false)
                 },
@@ -154,8 +154,8 @@ namespace HealthAppGCUData.Migrations
                 columns: table => new
                 {
                     UserId = table.Column<string>(nullable: false),
-                    LoginProvider = table.Column<string>(maxLength: 128, nullable: false),
-                    Name = table.Column<string>(maxLength: 128, nullable: false),
+                    LoginProvider = table.Column<string>(nullable: false),
+                    Name = table.Column<string>(nullable: false),
                     Value = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
@@ -174,80 +174,31 @@ namespace HealthAppGCUData.Migrations
                 columns: table => new
                 {
                     ID = table.Column<string>(nullable: false),
-                    NAME = table.Column<string>(maxLength: 50, nullable: true),
-                    Calories = table.Column<int>(nullable: false),
-                    WaterIntake = table.Column<double>(nullable: false),
-                    HEALTHCARE_CATEGORY_ID = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_HEALTHCARE_ACTIVITIES", x => x.ID);
-                    table.ForeignKey(
-                        name: "FK_HEALTHCARE_ACTIVITIES_HEALTHCARE_ACTIVITIES_CATEGORIES_HEALT~",
-                        column: x => x.HEALTHCARE_CATEGORY_ID,
-                        principalTable: "HEALTHCARE_ACTIVITIES_CATEGORIES",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "DAILY_REPORTS",
-                columns: table => new
-                {
-                    ID = table.Column<string>(nullable: false),
+                    NAME = table.Column<int>(nullable: false),
                     DATE = table.Column<DateTime>(nullable: false),
                     CALORIES = table.Column<int>(nullable: false),
                     WATER_INTAKE = table.Column<double>(nullable: false),
                     BLOOD_PRESSURE = table.Column<int>(nullable: false),
                     WEIGHT = table.Column<double>(nullable: false),
                     USER_ID = table.Column<string>(nullable: true),
-                    HealthcareActivityId = table.Column<string>(nullable: true)
+                    HealthcareActivityCategoryId = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_DAILY_REPORTS", x => x.ID);
+                    table.PrimaryKey("PK_HEALTHCARE_ACTIVITIES", x => x.ID);
                     table.ForeignKey(
-                        name: "FK_DAILY_REPORTS_HEALTHCARE_ACTIVITIES_HealthcareActivityId",
-                        column: x => x.HealthcareActivityId,
-                        principalTable: "HEALTHCARE_ACTIVITIES",
+                        name: "FK_HEALTHCARE_ACTIVITIES_HEALTHCARE_ACTIVITIES_CATEGORIES_Healt~",
+                        column: x => x.HealthcareActivityCategoryId,
+                        principalTable: "HEALTHCARE_ACTIVITIES_CATEGORIES",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_DAILY_REPORTS_AspNetUsers_USER_ID",
+                        name: "FK_HEALTHCARE_ACTIVITIES_AspNetUsers_USER_ID",
                         column: x => x.USER_ID,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
-
-            migrationBuilder.CreateTable(
-                name: "ACTIVITIES_DAILY_REPORTS",
-                columns: table => new
-                {
-                    DailyReportId = table.Column<string>(nullable: false),
-                    HealthcareActivityId = table.Column<string>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ACTIVITIES_DAILY_REPORTS", x => new { x.HealthcareActivityId, x.DailyReportId });
-                    table.ForeignKey(
-                        name: "FK_ACTIVITIES_DAILY_REPORTS_DAILY_REPORTS_DailyReportId",
-                        column: x => x.DailyReportId,
-                        principalTable: "DAILY_REPORTS",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_ACTIVITIES_DAILY_REPORTS_HEALTHCARE_ACTIVITIES_HealthcareAct~",
-                        column: x => x.HealthcareActivityId,
-                        principalTable: "HEALTHCARE_ACTIVITIES",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ACTIVITIES_DAILY_REPORTS_DailyReportId",
-                table: "ACTIVITIES_DAILY_REPORTS",
-                column: "DailyReportId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -287,26 +238,18 @@ namespace HealthAppGCUData.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_DAILY_REPORTS_HealthcareActivityId",
-                table: "DAILY_REPORTS",
-                column: "HealthcareActivityId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_DAILY_REPORTS_USER_ID",
-                table: "DAILY_REPORTS",
-                column: "USER_ID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_HEALTHCARE_ACTIVITIES_HEALTHCARE_CATEGORY_ID",
+                name: "IX_HEALTHCARE_ACTIVITIES_HealthcareActivityCategoryId",
                 table: "HEALTHCARE_ACTIVITIES",
-                column: "HEALTHCARE_CATEGORY_ID");
+                column: "HealthcareActivityCategoryId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_HEALTHCARE_ACTIVITIES_USER_ID",
+                table: "HEALTHCARE_ACTIVITIES",
+                column: "USER_ID");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "ACTIVITIES_DAILY_REPORTS");
-
             migrationBuilder.DropTable(
                 name: "AspNetRoleClaims");
 
@@ -323,19 +266,16 @@ namespace HealthAppGCUData.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "DAILY_REPORTS");
+                name: "HEALTHCARE_ACTIVITIES");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
-                name: "HEALTHCARE_ACTIVITIES");
+                name: "HEALTHCARE_ACTIVITIES_CATEGORIES");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
-
-            migrationBuilder.DropTable(
-                name: "HEALTHCARE_ACTIVITIES_CATEGORIES");
         }
     }
 }
