@@ -3,7 +3,11 @@
 }
 @model HealthcareActivityViewModel 
 
-<div class="row" style="text-align:center; margin-top:100px">
+<div>
+    <h5 class="h5" style="margin:8px">@Model.Date.ToShortDateString().TrimEnd(new char[] { '.', 'г'} )</h5>
+    <hr />
+</div>
+<div class="row" style="text-align:center; margin-top:60px">
     <div class="col-3">
         <h2 class="display-3">Calories</h2>
         <br />

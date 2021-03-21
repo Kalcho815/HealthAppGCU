@@ -42,7 +42,10 @@ namespace HealthAppGCU.DbManagers
 
         public HealthcareActivityViewModel GetTodaysActivity()
         {
-            var activity = user.HealthcareActivities.Where(a => a.Date.Day == DateTime.Now.Day).FirstOrDefault();
+            var activity = user.HealthcareActivities
+                .Where(a => a.Date.Day == DateTime.Now.Day)
+                .FirstOrDefault();
+
             var activityVm = adaptor.GetActivityViewModel(activity);
             return activityVm; 
         }

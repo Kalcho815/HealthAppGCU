@@ -18,12 +18,17 @@ namespace HealthAppGCU.DbManagers
 
         public void AddCalories(string username, int calories)
         {
-            var user = dbContext.Users.Include(u=>u.HealthcareActivities).Where(u => u.UserName == username).FirstOrDefault();
+            var user = dbContext.Users
+                .Include(u=>u.HealthcareActivities)
+                .Where(u => u.UserName == username)
+                .FirstOrDefault();
 
-            user.HealthcareActivities.Where(a => a.Date.Day == DateTime.Now.Day).FirstOrDefault()
-                .Calories += calories;
+            user.HealthcareActivities
+                .Where(a => a.Date.Day == DateTime.Now.Day)
+                .FirstOrDefault()
+                .Calories += Math.Abs(calories);
+
             dbContext.SaveChanges();
-
         }
     }
 }
