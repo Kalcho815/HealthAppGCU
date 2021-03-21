@@ -1,8 +1,29 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+@model HealthcareActivityViewModel 
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="row" style="text-align:center; margin-top:100px">
+    <div class="col-3">
+        <h2 class="display-3">Calories</h2>
+        <br />
+        <hr />
+        <h3 class="display-4">@(Model.Calories)kcal.</h3>
+    </div>
+    <div class="col-3">
+        <h2 class="display-3">Water Intake</h2>
+        <hr />
+        <h3 class="display-4">50l.</h3>
+    </div>
+    <div class="col-3">
+        <h2 class="display-3">Weight</h2>
+        <br />
+        <hr />
+        <h3 class="display-4">90kg.</h3>
+    </div>
+    <div class="col-3">
+        <h2 class="display-3">Heart Rate</h2>
+        <hr />
+        <h3 class="display-4">80bpm.</h3>
+    </div>
 </div>

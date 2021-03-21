@@ -1,5 +1,4 @@
 ﻿using HealthAppGCUData.Models;
-using HealthAppGCUData.Models.Enums;
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -11,16 +10,12 @@ namespace HealthAppGCU.Models
     {
         public HealthcareActivity()
         {
-            Guid guid = new Guid();
-            this.Id = guid.ToString();
+            this.Id = Guid.NewGuid().ToString();
         }
 
         [Key]
         [Column("ID")]
         public string Id { get; set; }
-
-        [Column("NAME")]
-        public ActivityNames Name { get; set; }
 
         [Column("DATE")]
         public DateTime Date { get; set; }
@@ -31,6 +26,8 @@ namespace HealthAppGCU.Models
         [Column("WATER_INTAKE")]
         public double WaterIntake { get; set; }
 
+
+        //TODO: Change to heart rate 
         [Column("BLOOD_PRESSURE")]
         public int BloodPressure { get; set; }
 
@@ -42,6 +39,13 @@ namespace HealthAppGCU.Models
         public string UserId { get; set; }
 
         public User User { get; set; }
+
+        [ForeignKey("HealthcareActivityCategoryId")]
+        public string HealthcareActivityCategoryId { get; set; }
+
+        //TODO: Remove nullable
+        public HealthcareActivityCategory? HealthcareActivityCategory { get; set; }
+
     }
 }
 

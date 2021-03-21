@@ -4,4 +4,16 @@
 @{
 }
 
-<h1>TEST</h1>
+<form asp-action="Count" asp-controller="Calories">
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text">Calories consumed:</span>
+        </div>
+        <input name="calories" type="number" class="form-control col-sm-3" />
+        <div class="input-group-append">
+            <input type="submit" class="btn btn-outline-dark" name="Submit" />
+        </div>
+    </div>
+</form>
+
+

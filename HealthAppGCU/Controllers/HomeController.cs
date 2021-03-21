@@ -1,27 +1,33 @@
-﻿using HealthAppGCU.Models;
+﻿using HealthAppGCU.DbManagers;
+using HealthAppGCU.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace HealthAppGCU.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly HealtchcareActivityDbManager healtchcareActivityDbManager;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, HealtchcareActivityDbManager healtchcareActivityDbManager)
         {
             _logger = logger;
+            this.healtchcareActivityDbManager = healtchcareActivityDbManager;
         }
 
-        
+        [HttpGet]
         public IActionResult Index()
         {
-            return View();
+            if (HttpContext.User.Identity.IsAuthenticated)
+            {
+                healtchcareActivityDbManager.CheckAndCreateHealthcareActivity();
+            }
+
+            var activityVm = this.healtchcareActivityDbManager.GetTodaysActivity();
+
+            return View(activityVm);
         }
 
         public IActionResult Privacy()

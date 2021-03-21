@@ -1,8 +1,11 @@
+using HealthAppGCU.Adaptors;
+using HealthAppGCU.DbManagers;
 using HealthAppGCU.Models;
 using HealthAppGCUData;
 using HealthAppGCUData.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -39,7 +42,13 @@ namespace HealthAppGCU
                 .AddEntityFrameworkStores<HealthAppContext>()
                 .AddDefaultTokenProviders();
 
+            services.AddTransient<HealtchcareActivityDbManager>();
+            services.AddTransient<CalorieDbManager>();
+            services.AddTransient<HealthcareActivityAdaptor>();
+
             services.AddRazorPages();
+
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 
 
@@ -59,11 +68,13 @@ namespace HealthAppGCU
                 app.UseHsts();
             }
             app.UseHttpsRedirection();
+
             app.UseStaticFiles();
 
             app.UseRouting();
 
             app.UseAuthorization();
+           
 
             app.UseAuthentication();
 

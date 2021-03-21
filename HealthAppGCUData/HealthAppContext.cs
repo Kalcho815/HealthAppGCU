@@ -17,7 +17,6 @@ namespace HealthAppGCUData
         {
         }
 
-        public DbSet<HealthcareActivity> DailyReports { get; set; }
 
         public DbSet<HealthcareActivity> HealthcareActivities { get; set; }
 
@@ -33,10 +32,6 @@ namespace HealthAppGCUData
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<User>().HasMany(p => p.HealthcareActivities).WithOne(p => p.User);
-
-          
-
-           
         }
     }
 }
