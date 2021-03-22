@@ -24,6 +24,10 @@ namespace HealthAppGCU.Controllers
             {
                 healtchcareActivityDbManager.CheckAndCreateHealthcareActivity();
             }
+            else
+            {
+                return View(new HealthcareActivityViewModel());
+            }
 
             var activityVm = this.healtchcareActivityDbManager.GetTodaysActivity();
 

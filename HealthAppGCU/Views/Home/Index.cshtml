@@ -4,7 +4,7 @@
 @model HealthcareActivityViewModel 
 
 <div>
-    <h5 class="h5" style="margin:8px">@Model.Date.ToShortDateString().TrimEnd(new char[] { '.', 'г'} )</h5>
+    <h5 class="h5" style="margin:8px">@Model.Date.Value.ToShortDateString().TrimEnd(new char[] { '.', 'г'} )</h5>
     <hr />
 </div>
 <div class="row" style="text-align:center; margin-top:60px">
