@@ -44,6 +44,7 @@ namespace HealthAppGCU
 
             services.AddTransient<HealtchcareActivityDbManager>();
             services.AddTransient<CalorieDbManager>();
+            services.AddTransient<WaterIntakeDbManager>();
             services.AddTransient<HealthcareActivityAdaptor>();
 
             services.AddRazorPages();
