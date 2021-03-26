@@ -1,0 +1,18 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+<form asp-action="Count" asp-controller="Weight">
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text">Today's Weight:</span>
+        </div>
+        <input name="weight" type="number" min="0" class="form-control col-sm-3" />
+        <div class="input-group-append">
+            <input type="submit" class="btn btn-outline-dark" name="Submit" />
+        </div>
+    </div>
+</form>
