@@ -8,7 +8,7 @@ namespace HealthAppGCU.Adaptors
         {
             return new HealthcareActivityViewModel
             {
-                BloodPressure = healthcareActivity.BloodPressure,
+                HoursSlept = healthcareActivity.HoursSlept,
                 Date = healthcareActivity.Date,
                 Calories = healthcareActivity.Calories,
                 Id = healthcareActivity.Id,

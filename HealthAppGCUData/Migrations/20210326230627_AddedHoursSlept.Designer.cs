@@ -3,14 +3,16 @@ using System;
 using HealthAppGCUData;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HealthAppGCUData.Migrations
 {
     [DbContext(typeof(HealthAppContext))]
-    partial class HealthAppContextModelSnapshot : ModelSnapshot
+    [Migration("20210326230627_AddedHoursSlept")]
+    partial class AddedHoursSlept
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -22,10 +24,6 @@ namespace HealthAppGCUData.Migrations
                     b.Property<string>("Id")
                         .HasColumnName("ID")
                         .HasColumnType("varchar(767)");
-
-                    b.Property<DateTime>("BedHour")
-                        .HasColumnName("BED_HOUR")
-                        .HasColumnType("datetime");
 
                     b.Property<int>("Calories")
                         .HasColumnName("CALORIES")
@@ -45,10 +43,6 @@ namespace HealthAppGCUData.Migrations
                     b.Property<string>("UserId")
                         .HasColumnName("USER_ID")
                         .HasColumnType("varchar(767)");
-
-                    b.Property<DateTime>("WakeHour")
-                        .HasColumnName("WAKE_HOUR")
-                        .HasColumnType("datetime");
 
                     b.Property<double>("WaterIntake")
                         .HasColumnName("WATER_INTAKE")
