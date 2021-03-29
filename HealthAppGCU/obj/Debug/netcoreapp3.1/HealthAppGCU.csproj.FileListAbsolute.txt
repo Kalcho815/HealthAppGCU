@@ -183,3 +183,6 @@ C:\Users\Krasy\source\repos\HealthAppGCU\HealthAppGCU\bin\Debug\netcoreapp3.1\My
 C:\Users\Krasy\source\repos\HealthAppGCU\HealthAppGCU\bin\Debug\netcoreapp3.1\Renci.SshNet.dll
 C:\Users\Krasy\source\repos\HealthAppGCU\HealthAppGCU\bin\Debug\netcoreapp3.1\SshNet.Security.Cryptography.dll
 C:\Users\Krasy\source\repos\HealthAppGCU\HealthAppGCU\bin\Debug\netcoreapp3.1\System.Xml.XPath.XmlDocument.dll
+C:\Users\Krasy\source\repos\HealthAppGCU\HealthAppGCU\obj\Debug\netcoreapp3.1\Razor\Views\WaterIntake\Count.cshtml.g.cs
+C:\Users\Krasy\source\repos\HealthAppGCU\HealthAppGCU\obj\Debug\netcoreapp3.1\Razor\Views\Sleep\Count.cshtml.g.cs
+C:\Users\Krasy\source\repos\HealthAppGCU\HealthAppGCU\obj\Debug\netcoreapp3.1\Razor\Views\Weight\Count.cshtml.g.cs
