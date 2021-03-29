@@ -23,13 +23,20 @@ namespace HealthAppGCU.Controllers
         }
 
         [HttpPost]
-        public IActionResult Count(DateTime bedHour, DateTime wakeHour)
+        public IActionResult Count(DateTime bedDate, string bedHour, DateTime wakeDate, string wakeHour)
         {
             var username = this.User.Identity.Name;
 
-            string input = DateTime.Now.Year + "-" + DateTime.Now.Month.ToString("D2") + "-" + DateTime.Now.AddDays(-2).Day.ToString("D2") + "T00:00";
+            var test = double.Parse(bedHour.Substring(0, 2));
+            var testt = double.Parse(bedHour.Substring(3));
 
-            this.sleepDbManager.RecordSleep(bedHour, wakeHour, username);
+            bedDate = bedDate.AddHours(double.Parse(bedHour.Substring(0,2)));
+            bedDate = bedDate.AddMinutes(double.Parse(bedHour.Substring(3)));
+
+            wakeDate = wakeDate.AddHours(double.Parse(wakeHour.Substring(0, 2)));
+            wakeDate = wakeDate.AddMinutes(double.Parse(wakeHour.Substring(3)));
+
+            this.sleepDbManager.RecordSleep(bedDate, wakeDate, username);
             return this.Redirect("/Home/Index");
         }
     }

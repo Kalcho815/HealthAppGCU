@@ -9,13 +9,17 @@
         <div class="input-group-prepend">
             <span class="input-group-text">Went to sleep...</span>
         </div>
-        <input name="bedHour" type="datetime-local" min="@(DateTime.Now.Year + "-" + DateTime.Now.Month.ToString("D2") + "-" + DateTime.Now.AddDays(-1).Day.ToString("D2") + "T00:00")" 
-               max="@(DateTime.Now.Year + "-" + DateTime.Now.Month.ToString("D2") + "-" + DateTime.Now.Day.ToString("D2") + "T00:00")" class="form-control col-sm-3" />
+        <input name="bedDate" class="form-control col-sm-3" type="date" min="@(DateTime.Now.Year + "-" + DateTime.Now.Month.ToString("D2") + "-" + DateTime.Now.AddDays(-1).Day.ToString("D2")@*+ "T12:00"*@)"
+               max="@(DateTime.Now.Year + "-" + DateTime.Now.Month.ToString("D2") + "-" + DateTime.Now.Day.ToString("D2")@*+ "T00:00"*@)" />
+        <input name="bedHour" style="width:50px" class="form-control" type="time" />
+
         <div class="input-group-prepend">
             <span class="input-group-text">Woke up...</span>
         </div>
-        <input name="wakeHour" min="@(DateTime.Now.Year + "-" + DateTime.Now.Month.ToString("D2") + "-" + DateTime.Now.AddDays(-1).Day.ToString("D2") + "T00:00")" 
-               max="@(DateTime.Now.Year + "-" + DateTime.Now.Month.ToString("D2") + "-" + DateTime.Now.Day.ToString("D2") + "T23:59")" type="datetime-local"  class="form-control col-sm-3" />
+        <input name="wakeDate" min="@(DateTime.Now.Year + "-" + DateTime.Now.Month.ToString("D2") + "-" + DateTime.Now.AddDays(-1).Day.ToString("D2"))"
+               max="@(DateTime.Now.Year + "-" + DateTime.Now.Month.ToString("D2") + "-" + DateTime.Now.Day.ToString("D2"))" type="date" class="form-control col-sm-3" />
+        <input name="wakeHour" style="width:50px" class="form-control" type="time" />
+
         <div class="input-group-append">
             <input type="submit" class="btn btn-outline-dark" name="Submit" />
         </div>
