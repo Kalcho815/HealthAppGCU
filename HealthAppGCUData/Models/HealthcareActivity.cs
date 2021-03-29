@@ -26,10 +26,16 @@ namespace HealthAppGCU.Models
         [Column("WATER_INTAKE")]
         public double WaterIntake { get; set; }
 
+        [Column("HOURS_SLEPT")]
+        public TimeSpan HoursSlept => this.WakeHour.Subtract(this.BedHour);
 
-        //TODO: Change to heart rate 
-        [Column("BLOOD_PRESSURE")]
-        public int BloodPressure { get; set; }
+        [Column("BED_HOUR")]
+        public DateTime BedHour { get;
+            set;
+        }
+
+        [Column("WAKE_HOUR")]
+        public DateTime WakeHour { get; set; }
 
         [Column("WEIGHT")]
         public double Weight { get; set; }

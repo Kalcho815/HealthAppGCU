@@ -1,0 +1,23 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<form asp-action="Count" asp-controller="Sleep">
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text">Went to sleep...</span>
+        </div>
+        <input name="bedHour" type="datetime-local" min="@(DateTime.Now.Year + "-" + DateTime.Now.Month.ToString("D2") + "-" + DateTime.Now.AddDays(-1).Day.ToString("D2") + "T00:00")" 
+               max="@(DateTime.Now.Year + "-" + DateTime.Now.Month.ToString("D2") + "-" + DateTime.Now.Day.ToString("D2") + "T00:00")" class="form-control col-sm-3" />
+        <div class="input-group-prepend">
+            <span class="input-group-text">Woke up...</span>
+        </div>
+        <input name="wakeHour" min="@(DateTime.Now.Year + "-" + DateTime.Now.Month.ToString("D2") + "-" + DateTime.Now.AddDays(-1).Day.ToString("D2") + "T00:00")" 
+               max="@(DateTime.Now.Year + "-" + DateTime.Now.Month.ToString("D2") + "-" + DateTime.Now.Day.ToString("D2") + "T23:59")" type="datetime-local"  class="form-control col-sm-3" />
+        <div class="input-group-append">
+            <input type="submit" class="btn btn-outline-dark" name="Submit" />
+        </div>
+    </div>
+</form>
