@@ -5,12 +5,12 @@
 }
 
 
-<form asp-action="RunCounter" asp-controller="Run">
+<form asp-action="SwimmingCounter" asp-controller="Swimming">
     <div class="input-group">
         <div class="input-group-prepend">
             <span class="input-group-text">Time started</span>
         </div>
-        <input name="startedDate" class="form-control col-sm-3" type="date" min="@(DateTime.Now.Year + "-" + DateTime.Now.Month.ToString("D2") + "-" 
+        <input name="startedDate" class="form-control col-sm-3" type="date" min="@(DateTime.Now.Year + "-" + DateTime.Now.Month.ToString("D2") + "-"
         + DateTime.Now.Day.ToString("D2"))"
                max="@(DateTime.Now.Year + "-" + DateTime.Now.Month.ToString("D2") + "-" + DateTime.Now.Day.ToString("D2")@*+ "T00:00"*@)" />
         <input name="startedHour" style="width:50px" class="form-control" type="time" />

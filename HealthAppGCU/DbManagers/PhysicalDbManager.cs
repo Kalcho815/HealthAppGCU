@@ -26,7 +26,7 @@ namespace HealthAppGCU.DbManagers
                 .Include(u => u.PhyiscalActivities)
                 .Where(u => u.UserName == username)
                 .FirstOrDefault();
-
+            
             var physicalActivity = this.adaptor.GetPhysicalActivity(viewModel);
             user.PhyiscalActivities.Add(physicalActivity);
             dbContext.SaveChanges();
