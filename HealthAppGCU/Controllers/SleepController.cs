@@ -27,9 +27,6 @@ namespace HealthAppGCU.Controllers
         {
             var username = this.User.Identity.Name;
 
-            var test = double.Parse(bedHour.Substring(0, 2));
-            var testt = double.Parse(bedHour.Substring(3));
-
             bedDate = bedDate.AddHours(double.Parse(bedHour.Substring(0,2)));
             bedDate = bedDate.AddMinutes(double.Parse(bedHour.Substring(3)));
 

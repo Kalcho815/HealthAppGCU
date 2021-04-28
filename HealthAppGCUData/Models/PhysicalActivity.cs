@@ -30,9 +30,6 @@ namespace HealthAppGCUData.Models
         public DateTime TimeEnded { get; set; }
 
         [Column("DISTANCE_COVERED")]
-        public double distanceCovered { get; set; }
-
-
-
+        public double DistanceCovered { get; set; }
     }
 }

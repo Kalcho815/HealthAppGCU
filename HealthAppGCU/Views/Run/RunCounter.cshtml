@@ -1,0 +1,30 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+<form asp-action="RunCounter" asp-controller="Run">
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text">Went to sleep...</span>
+        </div>
+        <input name="startedDate" class="form-control col-sm-3" type="date" min="@(DateTime.Now.Year + "-" + DateTime.Now.Month.ToString("D2") + "-" + DateTime.Now.AddDays(-1).Day.ToString("D2")@*+ "T12:00"*@)"
+               max="@(DateTime.Now.Year + "-" + DateTime.Now.Month.ToString("D2") + "-" + DateTime.Now.Day.ToString("D2")@*+ "T00:00"*@)" />
+        <input name="startedHour" style="width:50px" class="form-control" type="time" />
+
+        <div class="input-group-prepend">
+            <span class="input-group-text">Woke up...</span>
+        </div>
+        <input name="endedDate" min="@(DateTime.Now.Year + "-" + DateTime.Now.Month.ToString("D2") + "-" + DateTime.Now.AddDays(-1).Day.ToString("D2"))"
+               max="@(DateTime.Now.Year + "-" + DateTime.Now.Month.ToString("D2") + "-" + DateTime.Now.Day.ToString("D2"))" type="date" class="form-control col-sm-3" />
+        <input name="endedHour" style="width:50px" class="form-control" type="time" />
+
+        <input name="distanceCovered" style="width:50px; display:block" class="form-control" type="number" />
+
+        <div class="input-group-append">
+            <input type="submit" class="btn btn-outline-dark" name="Submit" />
+        </div>
+    </div>
+</form>
