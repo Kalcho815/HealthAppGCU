@@ -28,16 +28,18 @@ namespace HealthAppGCU.DbManagers
                 .FirstOrDefault();
 
             var physicalActivity = this.adaptor.GetPhysicalActivity(viewModel);
-            if (user.PhyiscalActivities.Where(p => p.Date.Day == DateTime.Now.Day && p.Name == "Run").ToList().Count == 0)
-            {
-                user.PhyiscalActivities.Add(physicalActivity);
-                dbContext.SaveChanges();
-            }
-            else
-            {
-                //user.PhyiscalActivities[user.PhyiscalActivities.FindIndex(p => p.Date.Day == DateTime.Now.Day)] = physicalActivity;
-                //dbContext.SaveChanges();
-            }
+            user.PhyiscalActivities.Add(physicalActivity);
+            dbContext.SaveChanges();
+
+            //if (user.PhyiscalActivities.Where(p => p.Date.Day == DateTime.Now.Day && p.Name == "Run").ToList().Count == 0)
+            //{
+
+            //}
+            //else
+            //{
+            //    user.PhyiscalActivities[user.PhyiscalActivities.FindIndex(p => p.UserId == physicalActivity.UserId)] = physicalActivity;
+            //    dbContext.SaveChanges();
+            //}
         }
     }
 }

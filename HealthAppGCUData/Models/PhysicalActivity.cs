@@ -10,11 +10,21 @@ namespace HealthAppGCUData.Models
     [Table("PHYSICAL_ACTIVITIES")]
     public class PhysicalActivity
     {
+        public PhysicalActivity()
+        {
+            this.Id = Guid.NewGuid().ToString();
+        }
+
         [Key]
+        [Column("ID")]
+        [MaxLength(255)]
+        public string Id { get; set; }
+
         [Column("NAME")]
+        [MaxLength(255)]
         public string Name { get; set; }
 
-        [ForeignKey("ID")]
+        [ForeignKey("USER")]
         [Column("USER_ID")]
         public string UserId { get; set; }
 

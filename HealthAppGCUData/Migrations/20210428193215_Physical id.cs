@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace HealthAppGCUData.Migrations
 {
-    public partial class Addedphysicalactivitiestable : Migration
+    public partial class Physicalid : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -11,7 +11,8 @@ namespace HealthAppGCUData.Migrations
                 name: "PHYSICAL_ACTIVITIES",
                 columns: table => new
                 {
-                    NAME = table.Column<string>(nullable: false),
+                    ID = table.Column<string>(maxLength: 255, nullable: false),
+                    NAME = table.Column<string>(maxLength: 255, nullable: true),
                     USER_ID = table.Column<string>(nullable: true),
                     DATE = table.Column<DateTime>(nullable: false),
                     TIME_STARTED = table.Column<DateTime>(nullable: false),
@@ -20,7 +21,7 @@ namespace HealthAppGCUData.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_PHYSICAL_ACTIVITIES", x => x.NAME);
+                    table.PrimaryKey("PK_PHYSICAL_ACTIVITIES", x => x.ID);
                     table.ForeignKey(
                         name: "FK_PHYSICAL_ACTIVITIES_AspNetUsers_USER_ID",
                         column: x => x.USER_ID,

@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HealthAppGCUData.Migrations
 {
     [DbContext(typeof(HealthAppContext))]
-    [Migration("20210422142952_Added physical activities table ")]
-    partial class Addedphysicalactivitiestable
+    [Migration("20210428193215_Physical id")]
+    partial class Physicalid
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -189,13 +189,23 @@ namespace HealthAppGCUData.Migrations
 
             modelBuilder.Entity("HealthAppGCUData.Models.PhysicalActivity", b =>
                 {
-                    b.Property<string>("Name")
-                        .HasColumnName("NAME")
-                        .HasColumnType("varchar(767)");
+                    b.Property<string>("Id")
+                        .HasColumnName("ID")
+                        .HasColumnType("varchar(255)")
+                        .HasMaxLength(255);
 
                     b.Property<DateTime>("Date")
                         .HasColumnName("DATE")
                         .HasColumnType("datetime");
+
+                    b.Property<double>("DistanceCovered")
+                        .HasColumnName("DISTANCE_COVERED")
+                        .HasColumnType("double");
+
+                    b.Property<string>("Name")
+                        .HasColumnName("NAME")
+                        .HasColumnType("varchar(255)")
+                        .HasMaxLength(255);
 
                     b.Property<DateTime>("TimeEnded")
                         .HasColumnName("TIME_ENDED")
@@ -209,11 +219,7 @@ namespace HealthAppGCUData.Migrations
                         .HasColumnName("USER_ID")
                         .HasColumnType("varchar(767)");
 
-                    b.Property<double>("distanceCovered")
-                        .HasColumnName("DISTANCE_COVERED")
-                        .HasColumnType("double");
-
-                    b.HasKey("Name");
+                    b.HasKey("Id");
 
                     b.HasIndex("UserId");
 

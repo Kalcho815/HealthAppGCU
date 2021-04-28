@@ -35,6 +35,7 @@ namespace HealthAppGCUData
             modelBuilder.Entity<User>().HasMany(p => p.HealthcareActivities).WithOne(p => p.User);
 
             //modelBuilder.Entity<User>().HasMany(p => p.PhyiscalActivities).WithOne(p => p.User);
+            modelBuilder.Entity<PhysicalActivity>().HasKey(p => p.Id);
 
         }
     }
