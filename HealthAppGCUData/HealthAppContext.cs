@@ -19,6 +19,7 @@ namespace HealthAppGCUData
 
 
         public DbSet<HealthcareActivity> HealthcareActivities { get; set; }
+        public DbSet<PhysicalActivity> PhyiscalActvities { get; set; }
 
         public DbSet<HealthcareActivityCategory> HealthcareActivityCategories { get; set; }
 
@@ -32,6 +33,9 @@ namespace HealthAppGCUData
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<User>().HasMany(p => p.HealthcareActivities).WithOne(p => p.User);
+
+            //modelBuilder.Entity<User>().HasMany(p => p.PhyiscalActivities).WithOne(p => p.User);
+
         }
     }
 }

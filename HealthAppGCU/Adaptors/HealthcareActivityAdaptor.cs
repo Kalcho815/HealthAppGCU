@@ -8,7 +8,7 @@ namespace HealthAppGCU.Adaptors
         {
             return new HealthcareActivityViewModel
             {
-                HoursSlept = healthcareActivity.HoursSlept,
+                HoursSlept = healthcareActivity.HoursSlept.ToString().Substring(0,2),
                 Date = healthcareActivity.Date,
                 Calories = healthcareActivity.Calories,
                 Id = healthcareActivity.Id,

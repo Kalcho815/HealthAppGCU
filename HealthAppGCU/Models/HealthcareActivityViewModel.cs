@@ -17,7 +17,7 @@ namespace HealthAppGCU.Models
 
         public double? WaterIntake { get; set; }
 
-        public TimeSpan? HoursSlept { get; set; }
+        public string HoursSlept { get; set; }
 
         public double? Weight { get; set; }
     }

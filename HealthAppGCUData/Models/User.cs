@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using HealthAppGCUData.Models;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -14,9 +15,12 @@ namespace HealthAppGCU.Models
         public User()
         {
             this.HealthcareActivities = new List<HealthcareActivity>();
+            this.PhyiscalActivities = new List<PhysicalActivity>();
         }
 
         public List<HealthcareActivity> HealthcareActivities { get; set; }
+
+        public List<PhysicalActivity> PhyiscalActivities { get; set; }
 
         [Column("FIRST_NAME")]
         public string FirstName { get; set; }

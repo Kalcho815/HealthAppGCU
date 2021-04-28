@@ -38,6 +38,7 @@ namespace HealthAppGCU.Controllers
         {
             return View();
         }
+        //TODO: Running, walking, cycling, swimming 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

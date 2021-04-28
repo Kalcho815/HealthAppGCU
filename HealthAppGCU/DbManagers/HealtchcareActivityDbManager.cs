@@ -27,7 +27,7 @@ namespace HealthAppGCU.DbManagers
         public void CheckAndCreateHealthcareActivity()
         {
             //TODO: DAY + MONTH + YEAR
-            if (!user.HealthcareActivities.Any(a => a.Date.Day == DateTime.Now.Day))
+            if (!user.HealthcareActivities.Any(a => a.Date == DateTime.Now))
             {
                 user.HealthcareActivities.Add(
                     new HealthcareActivity
