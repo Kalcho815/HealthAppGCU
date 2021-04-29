@@ -10,10 +10,20 @@ namespace HealthAppGCU.Controllers
     public class WeightController : Controller
     {
         private readonly WeightDbManager weightDbManager;
+        private readonly HealtchcareActivityDbManager healtchcareActivityDbManager;
 
-        public WeightController(WeightDbManager weightDbManager)
+        public WeightController(WeightDbManager weightDbManager, HealtchcareActivityDbManager healtchcareActivityDbManager)
         {
             this.weightDbManager = weightDbManager;
+            this.healtchcareActivityDbManager = healtchcareActivityDbManager;
+        }
+
+        [HttpGet]
+        public IActionResult Index()
+        {
+            var model = this.healtchcareActivityDbManager.GetTodaysActivity();
+
+            return View(model);
         }
 
         [HttpGet]

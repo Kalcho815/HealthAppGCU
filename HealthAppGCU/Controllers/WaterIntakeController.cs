@@ -10,10 +10,20 @@ namespace HealthAppGCU.Controllers
     public class WaterIntakeController : Controller
     {
         private readonly WaterIntakeDbManager waterIntakeDbManager;
+        private readonly HealtchcareActivityDbManager healtchcareActivityDbManager;
 
-        public WaterIntakeController(WaterIntakeDbManager waterIntakeDbManager)
+        public WaterIntakeController(WaterIntakeDbManager waterIntakeDbManager, HealtchcareActivityDbManager healtchcareActivityDbManager)
         {
             this.waterIntakeDbManager = waterIntakeDbManager;
+            this.healtchcareActivityDbManager = healtchcareActivityDbManager;
+        }
+
+        [HttpGet]
+        public IActionResult Index()
+        {
+            var model = healtchcareActivityDbManager.GetTodaysActivity();
+
+            return this.View(model);
         }
 
         [HttpGet]

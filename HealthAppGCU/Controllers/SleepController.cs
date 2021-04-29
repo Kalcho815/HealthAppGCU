@@ -10,10 +10,20 @@ namespace HealthAppGCU.Controllers
     public class SleepController : Controller
     {
         private readonly SleepDbManager sleepDbManager;
+        private readonly HealtchcareActivityDbManager healtchcareActivityDbManager;
 
-        public SleepController(SleepDbManager sleepDbManager)
+        public SleepController(SleepDbManager sleepDbManager, HealtchcareActivityDbManager healtchcareActivityDbManager)
         {
             this.sleepDbManager = sleepDbManager;
+            this.healtchcareActivityDbManager = healtchcareActivityDbManager;
+        }
+
+        [HttpGet]
+        public IActionResult Index()
+        {
+            var model = this.healtchcareActivityDbManager.GetTodaysActivity();
+
+            return View(model);
         }
 
         [HttpGet]

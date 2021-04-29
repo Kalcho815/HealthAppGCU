@@ -1,33 +1,69 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-@model HealthcareActivityViewModel 
+@model HealthcareActivityViewModel
 
-<div>
-    <h5 class="h5" style="margin:8px">@Model.Date.Value.ToShortDateString().TrimEnd(new char[] { '.', 'г'} )</h5>
-    <hr />
-</div>
-<div class="row" style="text-align:center; margin-top:60px">
-    <div class="col-3">
-        <h2 class="display-3">Calories</h2>
-        <br />
-        <hr />
-        <h3 class="display-4">@(Model.Calories)kcal.</h3>
+@if (!this.User.Identity.IsAuthenticated)
+{
+    <div class="jumbotron">
+        <h1 style="font-size:60px">GCU Healthcare</h1>
+        <p class="lead">Providing the best health tracking app from GCU Healthcare</p>
+        <img src="favicon.ico" alt="GCU logo" width="200" height="200" />
+        <!-- <p><a class="btn btn-default" href="#">Learn more &raquo;</a></p> -->
     </div>
-    <div class="col-3">
-        <h2 class="display-3">Water Intake</h2>
-        <hr />
-        <h3 class="display-4">@(Model.WaterIntake)ml.</h3>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Getting started</h2>
+            <p>
+                Start your healthy lifeststyle here. Register and track your progress.
+            </p>
+            <!-- <p><a class="btn btn-default" href="#">Learn more &raquo;</a></p> -->
+        </div>
+        <div class="col-md-4">
+            <h2>What we offer</h2>
+            <p>This service is to help you improve all aspects of your health</p>
+            <p>- track your physiological data</p>
+            <p>- track your physical data</p>
+            <p>- improve your mental health</p>
+            <!-- <p><a class="btn btn-default" href="#">Learn more &raquo;</a></p> -->
+        </div>
+        <div class="col-md-4">
+            <h2>GCU Healthcare </h2>
+            <p>Here for you</p>
+            <img src="favicon.ico" alt="GCU logo" width="200" height="200">
+        </div>
     </div>
-    <div class="col-3">
-        <h2 class="display-3">Weight</h2>
-        <br />
+}
+else
+{
+    <div>
+        <h5 class="h5" style="margin:8px">@Model.Date.Value.ToShortDateString().TrimEnd(new char[] { '.', 'г' })</h5>
         <hr />
-        <h3 class="display-4">@(Model.Weight)kg.</h3>
     </div>
-    <div class="col-3">
-        <h2 class="display-3">Hours Slept</h2>
-        <hr />
-        <h3 class="display-4">@(Model.HoursSlept)h</h3>
+    <div class="row" style="text-align:center; margin-top:60px">
+        <div class="col-3">
+            <h2 class="display-3">Calories</h2>
+            <br />
+            <hr />
+            <h3 class="display-4">@(Model.Calories)kcal.</h3>
+        </div>
+        <div class="col-3">
+            <h2 class="display-3">Water Intake</h2>
+            <hr />
+            <h3 class="display-4">@(Model.WaterIntake)ml.</h3>
+        </div>
+        <div class="col-3">
+            <h2 class="display-3">Hours Slept</h2>
+            <hr />
+            <h3 class="display-4">@(Model.HoursSlept == null ? Model.HoursSlept : Model.HoursSlept.TrimStart('0'))h.</h3>
+        </div>
+        <div class="col-3">
+            <h2 class="display-3">Weight</h2>
+            <br />
+            <hr />
+            <h3 class="display-4">@(Model.Weight)kg.</h3>
+        </div>
     </div>
-</div>
+
+}

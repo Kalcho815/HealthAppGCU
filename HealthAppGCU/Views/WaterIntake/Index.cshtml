@@ -1,0 +1,29 @@
+﻿@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+@{ ViewBag.Title = "Index"; }
+
+@model HealthcareActivityViewModel
+<!--Water intake-->
+<!--CRUD-->
+
+<div class="jumbotron">
+    <h1>Welcome to Water Intake &#128688;</h1>
+    <p class="lead">Here you can view and manage your Water intake</p>
+    <img src="favicon.ico" alt="GCU logo" width="200" height="200" />
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Viewing</h2>
+        <h3 class="display-4">@(Model.WaterIntake)ml.</h3>
+
+    </div>
+    <div class="col-md-4">
+        <h2>Add Water Intake</h2>
+        <a class="btn btn-outline-dark" asp-area="" asp-controller="WaterIntake" asp-action="Count">Click here</a>
+
+    </div>
+    <div class="col-md-4">
+        <h2>Delete Water Intake</h2>
+        <a class="btn btn-outline-dark" asp-area="" asp-controller="WaterIntake" asp-action="Delete">Click here</a>
+    </div>
+</div>

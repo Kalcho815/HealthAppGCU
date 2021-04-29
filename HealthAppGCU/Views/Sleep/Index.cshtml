@@ -1,0 +1,31 @@
+﻿@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+@{ ViewBag.Title = "Index"; }
+
+@model HealthcareActivityViewModel
+<!--landing page of sleep-->
+<!--link to sleep related pages-->
+
+<div class="jumbotron">
+    <h1>Welcome to Sleep &#128564;</h1>
+    <p class="lead">Here you can view and manage your Sleep</p>
+    <img src="favicon.ico" alt="GCU logo" width="200" height="200" />
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Viewing</h2>
+        <h3 class="display-4">@(Model.HoursSlept == null ? "0" : Model.HoursSlept.TrimStart('0'))h.</h3>
+        
+    </div>
+    <div class="col-md-4">
+        <h2>Add Sleep hours</h2>
+        <p></p>
+        <a class="btn btn-outline-dark" asp-area="" asp-controller="Sleep" asp-action="Count">Click here</a>
+
+    </div>
+    <div class="col-md-4">
+        <h2>Delete Sleep</h2>
+        <a class="btn btn-outline-dark" asp-area="" asp-controller="WaterIntake" asp-action="Delete">Click here</a>
+    </div>
+</div>

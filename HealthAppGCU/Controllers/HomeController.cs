@@ -38,7 +38,10 @@ namespace HealthAppGCU.Controllers
         {
             return View();
         }
-        //TODO: overview, user can choose period
+        public IActionResult Contact()
+        {
+            return View();
+        }
         //TODO: static page for mental health
         //TODO: remove data input from physical
         //TODO: reminders if something is low

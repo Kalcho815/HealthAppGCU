@@ -1,0 +1,30 @@
+﻿@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+@{ ViewBag.Title = "Index"; }
+
+@model HealthcareActivityViewModel
+
+<!--Calories Index-->
+<!--CRUD functions-->
+<div class="jumbotron">
+    <h1>Welcome to Calories &#x1F525;</h1>
+    <p class="lead">Here you can view and manage your Calories Burnt</p>
+    <img src="favicon.ico" alt="GCU logo" width="200" height="200" />
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Viewing</h2>
+        <!--take user to count.cshtml-->
+        <h3 class="display-4">@(Model.Calories)kcal.</h3>
+
+    </div>
+    <div class="col-md-4">
+        <h2>Add Calories</h2>
+        <a class="btn btn-outline-dark" asp-area="" asp-controller="Calories" asp-action="Count"> Click here</a>
+
+    </div>
+    <div class="col-md-4">
+        <h2>Delete Calories</h2>
+        <a class="btn btn-outline-dark " asp-area="" asp-controller="Calories" asp-action="Delete">Click here</a>
+    </div>
+</div>

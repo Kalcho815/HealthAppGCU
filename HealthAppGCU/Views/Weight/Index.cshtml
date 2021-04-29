@@ -1,0 +1,31 @@
+﻿@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+@{ ViewBag.Title = "Index"; }
+
+@model HealthcareActivityViewModel
+
+<!--Viewing Weight-->
+<!--CRUD-->
+
+<div class="jumbotron">
+    <h1>Welcome to Weight &#x2696;</h1>
+    <p class="lead">Here you can view and manage your Sleep</p>
+    <img src="favicon.ico" alt="GCU logo" width="200" height="200" />
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Viewing</h2>
+        <h3 class="display-4">@(Model.Weight)kg.</h3>
+    </div>
+    <div class="col-md-4">
+        <h2>Add Weight</h2>
+        <p></p>
+        <a class="btn btn-outline-dark" asp-area="" asp-controller="Weight" asp-action="Count">Click here</a>
+
+    </div>
+    <div class="col-md-4">
+        <h2>Delete Weight</h2>
+        <a class="btn btn-outline-dark" asp-area="" asp-controller="Weight" asp-action="Delete">Click here</a>
+    </div>
+</div>
