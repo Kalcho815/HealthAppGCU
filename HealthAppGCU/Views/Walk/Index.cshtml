@@ -1,0 +1,23 @@
+﻿@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+@{ ViewBag.Title = "Index"; }
+
+
+<!--Walking Index-->
+<!--CRUD functions-->
+<div class="jumbotron">
+    <h1>Welcome to Walking &#128694;</h1>
+    <p class="lead">Here you can manage your walking sessions</p>
+    <img src="favicon.ico" alt="GCU logo" width="200" height="200" />
+</div>
+
+<div class="row">
+    <div class="col-md-5">
+        <h2>Add Walking session</h2>
+        <a class="btn btn-outline-dark" asp-area="" asp-controller="Walk" asp-action="WalkCounter"> Click here</a>
+
+    </div>
+    <div class="col-md-5">
+        <h2>Delete Walking session</h2>
+        <a class="btn btn-outline-dark " asp-area="" asp-controller="Walk" asp-action="Delete">Click here</a>
+    </div>
+</div>

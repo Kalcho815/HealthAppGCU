@@ -1,0 +1,23 @@
+﻿@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+@{ ViewBag.Title = "Index"; }
+
+
+<!--Cycling Index-->
+<!--CRUD functions-->
+<div class="jumbotron">
+    <h1>Welcome to Cycling &#128690;</h1>
+    <p class="lead">Here you can manage your cycling sessions</p>
+    <img src="favicon.ico" alt="GCU logo" width="200" height="200" />
+</div>
+
+<div class="row">
+    <div class="col-md-5">
+        <h2>Add Cycling session</h2>
+        <a class="btn btn-outline-dark" asp-area="" asp-controller="Cycling" asp-action="CyclingCounter"> Click here</a>
+
+    </div>
+    <div class="col-md-5">
+        <h2>Delete Cycling session</h2>
+        <a class="btn btn-outline-dark " asp-area="" asp-controller="Cycling" asp-action="Delete">Click here</a>
+    </div>
+</div>

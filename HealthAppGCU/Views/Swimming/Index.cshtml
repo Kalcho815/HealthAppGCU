@@ -1,0 +1,23 @@
+﻿@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+@{ ViewBag.Title = "Index"; }
+
+
+<!--Swimming Index-->
+<!--CRUD functions-->
+<div class="jumbotron">
+    <h1>Welcome to Swimming &#127946;</h1>
+    <p class="lead">Here you can manage your swimming sessions</p>
+    <img src="favicon.ico" alt="GCU logo" width="200" height="200" />
+</div>
+
+<div class="row">
+    <div class="col-md-5">
+        <h2>Add Swimming session</h2>
+        <a class="btn btn-outline-dark" asp-area="" asp-controller="Swimming" asp-action="SwimmingCounter"> Click here</a>
+
+    </div>
+    <div class="col-md-5">
+        <h2>Delete Swimming session</h2>
+        <a class="btn btn-outline-dark " asp-area="" asp-controller="Swimming" asp-action="Delete">Click here</a>
+    </div>
+</div>

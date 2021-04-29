@@ -18,6 +18,12 @@ namespace HealthAppGCU.Controllers
         }
 
         [HttpGet]
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+        [HttpGet]
         public IActionResult WalkCounter()
         {
             return View();
