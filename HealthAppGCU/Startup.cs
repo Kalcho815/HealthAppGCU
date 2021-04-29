@@ -50,6 +50,7 @@ namespace HealthAppGCU
             services.AddTransient<SleepDbManager>();
             services.AddTransient<PhysicalDbManager>();
             services.AddTransient<PhysicalActivityAdaptor>();
+            services.AddTransient<OverviewDbManager>();
 
             services.AddRazorPages();
 

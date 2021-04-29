@@ -23,10 +23,14 @@ namespace HealthAppGCU.Controllers
         }
 
         [HttpPost]
-        public IActionResult Details(DateTime startDate, DateTime endDate, string activityType)
+        public IActionResult Details(DateTime fromDate, DateTime toDate, string activityType)
         {
             var username = this.User.Identity.Name;
-            this.dbManager.getOverview(startDate, endDate, activityType, username);
+            var physicalActivities = this.dbManager.GetPhysicalOverview(fromDate, toDate, activityType, username);
+            var healthcareActivities = this.dbManager.GetHealthcareOverview(fromDate, toDate, activityType, username);
+            ViewData["PhysicalActivities"] = physicalActivities;
+            ViewData["HealthcareActivities"] = healthcareActivities;
+            ViewData["activityType"] = activityType;
 
             return View();
         }

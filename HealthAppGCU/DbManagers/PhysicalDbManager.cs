@@ -49,7 +49,8 @@ namespace HealthAppGCU.DbManagers
                .Where(u => u.UserName == username)
                .FirstOrDefault();
 
-            var activities = user.PhyiscalActivities.Where(p => p.Date < endDate && p.Date > startDate);
+            var activities = user.PhyiscalActivities.Where(p => p.Name == activityType &&  p.Date <= endDate.AddHours(23).AddMinutes(59).AddMinutes(59) && p.Date >= startDate);//zashtoto kato se izbere edin den to proverqva dali e mejdu 00:00 i 00:00
+
 
             var result = new List<PhysicalActivityViewModel>();
 
