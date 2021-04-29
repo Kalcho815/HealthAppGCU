@@ -23,7 +23,10 @@
                         @if (this.User.Identity.IsAuthenticated)
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-light" asp-area="" asp-controller="PersonalData" asp-action="Index">Personal Data</a>
+                                <a class="nav-link text-light" asp-area="" asp-controller="PersonalData" asp-action="Index">Personal data</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-light" asp-area="" asp-controller="PhysicalData" asp-action="Index">Physical data</a>
                             </li>
                         }
                         else
