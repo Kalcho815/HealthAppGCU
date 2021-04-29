@@ -41,5 +41,24 @@ namespace HealthAppGCU.DbManagers
             //    dbContext.SaveChanges();
             //}
         }
+
+        public List<PhysicalActivityViewModel> GetOverview(DateTime startDate, DateTime endDate, string activityType, string username)
+        {
+            var user = dbContext.Users
+               .Include(u => u.PhyiscalActivities)
+               .Where(u => u.UserName == username)
+               .FirstOrDefault();
+
+            var activities = user.PhyiscalActivities.Where(p => p.Date < endDate && p.Date > startDate);
+
+            var result = new List<PhysicalActivityViewModel>();
+
+            foreach (var activity in activities)
+            {
+                result.Add(this.adaptor.GetPhysicalActivityViewModel(activity));
+            }
+
+            return result;
+        }
     }
 }

@@ -21,5 +21,18 @@ namespace HealthAppGCU.Adaptors
             };
             return result;
         }
+
+        public PhysicalActivityViewModel GetPhysicalActivityViewModel(PhysicalActivity physicalActivity)
+        {
+            var result = new PhysicalActivityViewModel
+            {
+                Name = physicalActivity.Name,
+                Date = DateTime.Now,
+                DistanceCovered = physicalActivity.DistanceCovered,
+                TimeEnded = physicalActivity.TimeEnded,
+                TimeStarted = physicalActivity.TimeStarted,
+            };
+            return result;
+        }
     }
 }

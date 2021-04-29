@@ -38,8 +38,11 @@ namespace HealthAppGCU.Controllers
         {
             return View();
         }
-        //TODO: Running, walking, cycling, swimming 
-
+        //TODO: overview, user can choose period
+        //TODO: static page for mental health
+        //TODO: remove data input from physical
+        //TODO: reminders if something is low
+        //TODO: change htmls 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
