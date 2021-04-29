@@ -23,8 +23,6 @@ namespace HealthAppGCU.DbManagers
         public List<PhysicalActivityViewModel> GetPhysicalOverview(DateTime startDate, DateTime endDate, string activityType, string username)
         {
             var result = this.physicalDbManager.GetOverview(startDate, endDate, activityType, username);
-            //TODO: two different get overview methods in overview controller, depending if healthcare activity or physical activity
-            //TODO: or one viewmodel with 2 lists for the activities
 
             return result;
         }

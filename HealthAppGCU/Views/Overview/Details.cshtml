@@ -14,8 +14,14 @@
             <span class="input-group-text">Activity type</span>
         </div>
         <select name="activityType" class="form-control">
-            <option value="Run">Run</option>
+            <option value="Run">Running</option>
+            <option value="Walk">Walking</option>
+            <option value="Cycling">Cycling</option>
+            <option value="Swimming">Swimming</option>
             <option value="WaterIntake">Water intake</option>
+            <option value="Calories">Calories</option>
+            <option value="Sleep">Sleep</option>
+            <option value="Weight">Weight</option>
         </select>
 
         <div class="input-group-prepend">
@@ -76,7 +82,7 @@
 }
 else if (healthcareActivities != null && healthcareActivities.Count != 0)
 {
-    <table class="table-bordered table-hover" style="margin-top: 30px; margin: 0 auto; width:100%; text-align:center">
+    <table class="table-bordered table-hover" style="margin-top: 30px; margin: 0 auto; width:50%; text-align:center">
 
 
         @if (activityType == "WaterIntake")
@@ -90,7 +96,58 @@ else if (healthcareActivities != null && healthcareActivities.Count != 0)
                 {
                     <tr>
                         <td>@(activity.WaterIntake + "ml.")</td>
-                        <td>@activity.Date</td>
+                        <td>@activity.Date.Value.ToShortDateString()</td>
+                    </tr>
+                }
+
+            }
+        }
+        else if (activityType == "Calories")
+        {
+            <thead>
+                <tr><th>Calories</th><th>Date</th></tr>
+            </thead>
+            @foreach (var activity in healthcareActivities)
+            {
+                if (activity.Calories != 0)
+                {
+                    <tr>
+                        <td>@(activity.Calories + "kcal.")</td>
+                        <td>@activity.Date.Value.ToShortDateString()</td>
+                    </tr>
+                }
+
+            }
+        }
+        else if (activityType == "Weight")
+        {
+            <thead>
+                <tr><th>Weight</th><th>Date</th></tr>
+            </thead>
+            @foreach (var activity in healthcareActivities)
+            {
+                if (activity.Weight != 0)
+                {
+                    <tr>
+                        <td>@(activity.Weight + " kg.")</td>
+                        <td>@activity.Date.Value.ToShortDateString()</td>
+                    </tr>
+                }
+
+            }
+        }
+        else if (activityType == "Sleep")
+        {
+            <thead>
+                <tr><th>Hours Slept</th><th>Date</th></tr>
+            </thead>
+            @foreach (var activity in healthcareActivities)
+            {
+                if (activity.HoursSlept != null)
+                {
+                    <tr>
+                        <td>@(activity.HoursSlept + " h.")</td>
+                        <td>@activity.Date.Value.ToShortDateString()</td>
                     </tr>
                 }
 

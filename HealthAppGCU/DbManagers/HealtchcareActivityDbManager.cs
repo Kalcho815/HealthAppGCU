@@ -27,7 +27,6 @@ namespace HealthAppGCU.DbManagers
 
         public void CheckAndCreateHealthcareActivity()
         {
-            //TODO: DAY + MONTH + YEAR
             if (!user.HealthcareActivities.Any(a => a.Date.Date == DateTime.Now.Date))
             {
                 user.HealthcareActivities.Add(
@@ -58,7 +57,7 @@ namespace HealthAppGCU.DbManagers
                .Where(u => u.UserName == username)
                .FirstOrDefault();
 
-            var activities = user.HealthcareActivities.Where(h => h.Date <= endDate.AddHours(23).AddMinutes(59).AddMinutes(59) && h.Date >= startDate);//zashtoto kato se izbere edin den to proverqva dali e mejdu 00:00 i 00:00
+            var activities = user.HealthcareActivities.Where(h => h.Date <= endDate.AddHours(23).AddMinutes(59).AddSeconds(59) && h.Date >= startDate);//zashtoto kato se izbere edin den to proverqva dali e mejdu 00:00 i 00:00
 
 
             var result = new List<HealthcareActivityViewModel>();
