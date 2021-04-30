@@ -10,3 +10,15 @@ C:\Users\Krasy\source\repos\HealthAppGCU\HealthAppGCUData\obj\Debug\netcoreapp3.
 C:\Users\Krasy\source\repos\HealthAppGCU\HealthAppGCUData\bin\Debug\netcoreapp3.1\HealthAppGCUData.runtimeconfig.json
 C:\Users\Krasy\source\repos\HealthAppGCU\HealthAppGCUData\bin\Debug\netcoreapp3.1\HealthAppGCUData.runtimeconfig.dev.json
 C:\Users\Krasy\source\repos\HealthAppGCU\HealthAppGCUData\obj\Debug\netcoreapp3.1\HealthAppGCUData.genruntimeconfig.cache
+C:\Users\Aadam\Documents\GitHub\HealthAppGCU\HealthAppGCUData\bin\Debug\netcoreapp3.1\HealthAppGCUData.deps.json
+C:\Users\Aadam\Documents\GitHub\HealthAppGCU\HealthAppGCUData\bin\Debug\netcoreapp3.1\HealthAppGCUData.runtimeconfig.json
+C:\Users\Aadam\Documents\GitHub\HealthAppGCU\HealthAppGCUData\bin\Debug\netcoreapp3.1\HealthAppGCUData.runtimeconfig.dev.json
+C:\Users\Aadam\Documents\GitHub\HealthAppGCU\HealthAppGCUData\bin\Debug\netcoreapp3.1\HealthAppGCUData.dll
+C:\Users\Aadam\Documents\GitHub\HealthAppGCU\HealthAppGCUData\bin\Debug\netcoreapp3.1\HealthAppGCUData.pdb
+C:\Users\Aadam\Documents\GitHub\HealthAppGCU\HealthAppGCUData\obj\Debug\netcoreapp3.1\HealthAppGCUData.csprojAssemblyReference.cache
+C:\Users\Aadam\Documents\GitHub\HealthAppGCU\HealthAppGCUData\obj\Debug\netcoreapp3.1\HealthAppGCUData.AssemblyInfoInputs.cache
+C:\Users\Aadam\Documents\GitHub\HealthAppGCU\HealthAppGCUData\obj\Debug\netcoreapp3.1\HealthAppGCUData.AssemblyInfo.cs
+C:\Users\Aadam\Documents\GitHub\HealthAppGCU\HealthAppGCUData\obj\Debug\netcoreapp3.1\HealthAppGCUData.csproj.CoreCompileInputs.cache
+C:\Users\Aadam\Documents\GitHub\HealthAppGCU\HealthAppGCUData\obj\Debug\netcoreapp3.1\HealthAppGCUData.dll
+C:\Users\Aadam\Documents\GitHub\HealthAppGCU\HealthAppGCUData\obj\Debug\netcoreapp3.1\HealthAppGCUData.pdb
+C:\Users\Aadam\Documents\GitHub\HealthAppGCU\HealthAppGCUData\obj\Debug\netcoreapp3.1\HealthAppGCUData.genruntimeconfig.cache
