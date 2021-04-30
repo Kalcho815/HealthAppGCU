@@ -10,3 +10,15 @@ C:\Users\Krasy\source\repos\HealthAppGCU\HealthAppGCUData\obj\Debug\netcoreapp3.
 C:\Users\Krasy\source\repos\HealthAppGCU\HealthAppGCUData\bin\Debug\netcoreapp3.1\HealthAppGCUData.runtimeconfig.json
 C:\Users\Krasy\source\repos\HealthAppGCU\HealthAppGCUData\bin\Debug\netcoreapp3.1\HealthAppGCUData.runtimeconfig.dev.json
 C:\Users\Krasy\source\repos\HealthAppGCU\HealthAppGCUData\obj\Debug\netcoreapp3.1\HealthAppGCUData.genruntimeconfig.cache
+D:\uni\2nd year\IP2\coursework\HealthAppGCU\HealthAppGCUData\bin\Debug\netcoreapp3.1\HealthAppGCUData.deps.json
+D:\uni\2nd year\IP2\coursework\HealthAppGCU\HealthAppGCUData\bin\Debug\netcoreapp3.1\HealthAppGCUData.runtimeconfig.json
+D:\uni\2nd year\IP2\coursework\HealthAppGCU\HealthAppGCUData\bin\Debug\netcoreapp3.1\HealthAppGCUData.runtimeconfig.dev.json
+D:\uni\2nd year\IP2\coursework\HealthAppGCU\HealthAppGCUData\bin\Debug\netcoreapp3.1\HealthAppGCUData.dll
+D:\uni\2nd year\IP2\coursework\HealthAppGCU\HealthAppGCUData\bin\Debug\netcoreapp3.1\HealthAppGCUData.pdb
+D:\uni\2nd year\IP2\coursework\HealthAppGCU\HealthAppGCUData\obj\Debug\netcoreapp3.1\HealthAppGCUData.csprojAssemblyReference.cache
+D:\uni\2nd year\IP2\coursework\HealthAppGCU\HealthAppGCUData\obj\Debug\netcoreapp3.1\HealthAppGCUData.AssemblyInfoInputs.cache
+D:\uni\2nd year\IP2\coursework\HealthAppGCU\HealthAppGCUData\obj\Debug\netcoreapp3.1\HealthAppGCUData.AssemblyInfo.cs
+D:\uni\2nd year\IP2\coursework\HealthAppGCU\HealthAppGCUData\obj\Debug\netcoreapp3.1\HealthAppGCUData.csproj.CoreCompileInputs.cache
+D:\uni\2nd year\IP2\coursework\HealthAppGCU\HealthAppGCUData\obj\Debug\netcoreapp3.1\HealthAppGCUData.dll
+D:\uni\2nd year\IP2\coursework\HealthAppGCU\HealthAppGCUData\obj\Debug\netcoreapp3.1\HealthAppGCUData.pdb
+D:\uni\2nd year\IP2\coursework\HealthAppGCU\HealthAppGCUData\obj\Debug\netcoreapp3.1\HealthAppGCUData.genruntimeconfig.cache

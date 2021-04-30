@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.30709.132
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthAppGCU", "HealthAppGCU\HealthAppGCU.csproj", "{2C81EE80-E410-4680-8EB8-537CE09EC045}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthAppGCUData", "HealthAppGCUData\HealthAppGCUData.csproj", "{4EE34E11-1951-401C-B7CF-31D9871F70B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthAppGCUData", "HealthAppGCUData\HealthAppGCUData.csproj", "{4EE34E11-1951-401C-B7CF-31D9871F70B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthAppGCUTests", "HealthAppGCUTests\HealthAppGCUTests.csproj", "{7465F8C7-62CF-4BE6-8B0F-CC2FA368BAB4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{4EE34E11-1951-401C-B7CF-31D9871F70B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4EE34E11-1951-401C-B7CF-31D9871F70B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4EE34E11-1951-401C-B7CF-31D9871F70B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7465F8C7-62CF-4BE6-8B0F-CC2FA368BAB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7465F8C7-62CF-4BE6-8B0F-CC2FA368BAB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7465F8C7-62CF-4BE6-8B0F-CC2FA368BAB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7465F8C7-62CF-4BE6-8B0F-CC2FA368BAB4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
