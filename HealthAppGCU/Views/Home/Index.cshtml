@@ -1,6 +1,8 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<User> UserManager
 @model HealthcareActivityViewModel
 
 @if (!this.User.Identity.IsAuthenticated)
@@ -37,10 +39,12 @@
 }
 else
 {
-    <div>
-        <h5 class="h5" style="margin:8px">@Model.Date.Value.ToShortDateString().TrimEnd(new char[] { '.', 'г' })</h5>
-        <hr />
-    </div>
+<div>
+    <h5 class="h5" style="margin:8px">Date: @Model.Date.Value.ToShortDateString().TrimEnd(new char[] { '.', 'г' })</h5>
+    <hr />
+    <h5 class="h5" style="margin:8px; text-align:center">Hello, @UserManager.GetUserName(User)! This is your daily healthcare information.</h5>
+    <hr style="width:50%; justify-content: left;" />
+</div>
     <div class="row" style="text-align:center; margin-top:60px">
         <div class="col-3">
             <h2 class="display-3">Calories</h2>
