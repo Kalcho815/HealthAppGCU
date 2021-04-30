@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Krasy\\source\\repos\\HealthAppGCU\\HealthAppGCU\\HealthAppGCU.csproj": {}
+    "C:\\Users\\Aadam\\Documents\\GitHub\\HealthAppGCU\\HealthAppGCU\\HealthAppGCU.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Krasy\\source\\repos\\HealthAppGCU\\HealthAppGCUData\\HealthAppGCUData.csproj": {
+    "C:\\Users\\Aadam\\Documents\\GitHub\\HealthAppGCU\\HealthAppGCUData\\HealthAppGCUData.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Krasy\\source\\repos\\HealthAppGCU\\HealthAppGCUData\\HealthAppGCUData.csproj",
+        "projectUniqueName": "C:\\Users\\Aadam\\Documents\\GitHub\\HealthAppGCU\\HealthAppGCUData\\HealthAppGCUData.csproj",
         "projectName": "HealthAppGCUData",
-        "projectPath": "C:\\Users\\Krasy\\source\\repos\\HealthAppGCU\\HealthAppGCUData\\HealthAppGCUData.csproj",
-        "packagesPath": "C:\\Users\\Krasy\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Krasy\\source\\repos\\HealthAppGCU\\HealthAppGCUData\\obj\\",
+        "projectPath": "C:\\Users\\Aadam\\Documents\\GitHub\\HealthAppGCU\\HealthAppGCUData\\HealthAppGCUData.csproj",
+        "packagesPath": "C:\\Users\\Aadam\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Aadam\\Documents\\GitHub\\HealthAppGCU\\HealthAppGCUData\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Krasy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Aadam\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -81,24 +78,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Krasy\\source\\repos\\HealthAppGCU\\HealthAppGCU\\HealthAppGCU.csproj": {
+    "C:\\Users\\Aadam\\Documents\\GitHub\\HealthAppGCU\\HealthAppGCU\\HealthAppGCU.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Krasy\\source\\repos\\HealthAppGCU\\HealthAppGCU\\HealthAppGCU.csproj",
+        "projectUniqueName": "C:\\Users\\Aadam\\Documents\\GitHub\\HealthAppGCU\\HealthAppGCU\\HealthAppGCU.csproj",
         "projectName": "HealthAppGCU",
-        "projectPath": "C:\\Users\\Krasy\\source\\repos\\HealthAppGCU\\HealthAppGCU\\HealthAppGCU.csproj",
-        "packagesPath": "C:\\Users\\Krasy\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Krasy\\source\\repos\\HealthAppGCU\\HealthAppGCU\\obj\\",
+        "projectPath": "C:\\Users\\Aadam\\Documents\\GitHub\\HealthAppGCU\\HealthAppGCU\\HealthAppGCU.csproj",
+        "packagesPath": "C:\\Users\\Aadam\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Aadam\\Documents\\GitHub\\HealthAppGCU\\HealthAppGCU\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Krasy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Aadam\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -112,8 +106,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\Krasy\\source\\repos\\HealthAppGCU\\HealthAppGCUData\\HealthAppGCUData.csproj": {
-                "projectPath": "C:\\Users\\Krasy\\source\\repos\\HealthAppGCU\\HealthAppGCUData\\HealthAppGCUData.csproj"
+              "C:\\Users\\Aadam\\Documents\\GitHub\\HealthAppGCU\\HealthAppGCUData\\HealthAppGCUData.csproj": {
+                "projectPath": "C:\\Users\\Aadam\\Documents\\GitHub\\HealthAppGCU\\HealthAppGCUData\\HealthAppGCUData.csproj"
               }
             }
           }
@@ -163,6 +157,10 @@
             "MySql.Data.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.22, )"
+            },
+            "NonFactors.Grid.Core.Mvc6": {
+              "target": "Package",
+              "version": "[6.2.4, )"
             }
           },
           "imports": [
@@ -183,7 +181,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
