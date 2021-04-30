@@ -42,10 +42,15 @@ namespace HealthAppGCU.Controllers
         {
             return View();
         }
-        //TODO: static page for mental health
+
+        public IActionResult MentalWelbeing()
+        {
+            return View();
+        }
+
         //TODO: remove data input from physical
         //TODO: reminders if something is low
-        //TODO: change htmls 
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
